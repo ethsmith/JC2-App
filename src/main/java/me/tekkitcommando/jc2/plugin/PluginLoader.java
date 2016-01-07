@@ -24,15 +24,8 @@ public class PluginLoader {
                 }
             }
             
-            FilenameFilter pluginFilter = new FilenameFilter() {
-
-                @Override
-                public boolean accept(File dir, String name) {
-                    if (name.endsWith(".zip") || name.endsWith(".jar")){
-                        return true;
-                    }
-                    return false;
-                }
+            FilenameFilter pluginFilter = (File dir, String name) -> {
+                return name.endsWith(".zip") || name.endsWith(".jar");
             };
             
             File[] listOfFiles = pluginDir.listFiles(pluginFilter);

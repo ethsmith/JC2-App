@@ -8,7 +8,7 @@ package me.tekkitcommando.jc2;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+import me.tekkitcommando.jc2.plugin.PluginLoader;
 import me.tekkitcommando.jc2.servers.ServerList;
 
 /**
@@ -28,6 +28,7 @@ public class JC2 {
     static IDManager idManager = new IDManager();
     static ServerList serverList = new ServerList();
     static List<JC2> appsList = new ArrayList();
+    PluginLoader pluginLoader;
 
     public static void main(String[] args) {
 
@@ -45,7 +46,8 @@ public class JC2 {
 
         Scanner scanner = new Scanner(System.in);
         String currentCommand;
-
+        pluginLoader = new PluginLoader(this);
+    
         System.out.println("Info: Type /info to get the build version!");
         System.out.println("Info: Type /help to get a list of availble commands!");
 

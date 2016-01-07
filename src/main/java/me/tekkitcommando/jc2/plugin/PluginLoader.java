@@ -1,6 +1,7 @@
 package me.tekkitcommando.jc2.plugin;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import me.tekkitcommando.jc2.JC2;
 
 /**
@@ -22,6 +23,23 @@ public class PluginLoader {
                     System.out.println("New Folder created!");
                 }
             }
+            
+            FilenameFilter pluginFilter = new FilenameFilter() {
+
+                @Override
+                public boolean accept(File dir, String name) {
+                    if (name.endsWith(".zip") || name.endsWith(".jar")){
+                        return true;
+                    }
+                    return false;
+                }
+            };
+            
+            File[] listOfFiles = pluginDir.listFiles(pluginFilter);
+            for (File pluginFile : listOfFiles) {
+                System.out.println("Found plugin file " + pluginFile);
+            }
+            
         } catch (Exception e) {
             System.out.println(e);
 

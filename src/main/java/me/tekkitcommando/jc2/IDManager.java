@@ -11,7 +11,7 @@ public class IDManager {
     public HashMap blockInfo;
 
     public IDManager() {
-        this.blockInfo = new HashMap<>();
+        this.blockInfo = new HashMap();
         blockInfo.put("wood", "5");
         blockInfo.put("air", "0");
         blockInfo.put("stone", "1");

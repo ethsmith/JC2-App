@@ -5,7 +5,7 @@ import java.io.FilenameFilter;
 import me.tekkitcommando.jc2.JC2;
 
 /**
- * Created by ethan on 1/6/2016.
+ * Created by methane on 1/6/2016.
  */
 public class PluginLoader {
 

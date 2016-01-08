@@ -14,7 +14,7 @@ import java.awt.HeadlessException;
  * @author Phillip
  */
 public class TestHeadless {
-   private static boolean isReallyHeadless() {
+   public static boolean isReallyHeadless() {
         if (GraphicsEnvironment.isHeadless()) {
             return true;
         }

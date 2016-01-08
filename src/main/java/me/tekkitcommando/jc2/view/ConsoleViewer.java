@@ -5,6 +5,11 @@
  */
 package me.tekkitcommando.jc2.view;
 
+import me.tekkitcommando.jc2.JC2;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Phillip
@@ -76,9 +81,36 @@ public class ConsoleViewer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+        jTextField1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jTextField1.getActions(); // temp dont mind this.
+            }
+        });
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    public void jButton1ActionPerformed(java.awt.event.ActionEvent event) {
+        jButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String cmd;
+                cmd = jTextField1.getText();
+
+                if(cmd.equalsIgnoreCase("/help")) {
+                    System.out.println("/Info: Gives Info Such as Build Version, Website, and Github Link");
+                    System.out.println("/Website: Gives The Developers Website");
+                    System.out.println("/Help: Gives All Commands");
+                    System.out.println("/Id: get a block id number from its name");
+                    System.out.println("/Download: request a download for different server softwares.");
+                    System.out.println("/Stop: Close the console");
+                } else if(cmd.equalsIgnoreCase("/info")) {
+                    System.out.println("Build Version: " + JC2.version);
+                    System.out.println("Website: " + JC2.website);
+                    System.out.println("View on Github: " + JC2.github);
+                }
+            }
+        });
+    }
     /**
      * @param args the command line arguments
      */

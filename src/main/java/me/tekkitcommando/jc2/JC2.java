@@ -20,11 +20,11 @@ import me.tekkitcommando.jc2.view.TestHeadless;
 public class JC2 {
 
     // Specifies Version
-    final static String version = "1.0.0 - SNAPSHOT";
+    public final static String version = "1.0.0 - SNAPSHOT";
     // Specifies Website
-    final static String website = "www.tekkitcommando.me";
+    public final static String website = "www.tekkitcommando.me";
     // Specifies Github Repo
-    final static String github = "https://github.com/TekkitCommando/JC2";
+    public final static String github = "https://github.com/TekkitCommando/JC2";
 
     static IDManager idManager = new IDManager();
     static ServerList serverList = new ServerList();

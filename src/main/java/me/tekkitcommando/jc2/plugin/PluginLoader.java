@@ -1,13 +1,14 @@
 package me.tekkitcommando.jc2.plugin;
 
+import java.lang.ClassLoader;
 import java.io.File;
 import java.io.FilenameFilter;
 import me.tekkitcommando.jc2.JC2;
 
 /**
- * Created by methane on 1/6/2016.
+ * Created by Ethan and Phill on 1/6/2016.
  */
-public class PluginLoader {
+public class PluginLoader extends ClassLoader {
 
     /**
      * Need to add the code for loading plugins made with the JC2 API and need
@@ -23,16 +24,20 @@ public class PluginLoader {
                     System.out.println("New Folder created!");
                 }
             }
-            
+
             FilenameFilter pluginFilter = (File dir, String name) -> {
                 return name.endsWith(".zip") || name.endsWith(".jar");
             };
-            
+
             File[] listOfFiles = pluginDir.listFiles(pluginFilter);
             for (File pluginFile : listOfFiles) {
                 System.out.println("Found plugin file " + pluginFile);
             }
-            
+
+            for (File pluginFile : listOfFiles) {
+                System.out.println("Loading " + pluginFile + "...");
+            }
+
         } catch (Exception e) {
             System.out.println(e);
 

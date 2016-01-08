@@ -12,7 +12,6 @@ import me.tekkitcommando.jc2.plugin.PluginLoader;
 import me.tekkitcommando.jc2.servers.ServerList;
 
 /**
- *
  * @author Phillip
  * @author Ethan
  */

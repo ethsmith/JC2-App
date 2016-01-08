@@ -15,25 +15,36 @@ import java.util.Arrays;
 public class JC2Command {
    public final String name;
    private final  ArrayList<String> parameters;
-   public boolean hasError;
-   private Exception error;
-   public JC2Command (String cmdValue) {
-       if(cmdValue.isEmpty()){
+   private Exception error = null;
+   private final JC2 parentConsole;
+   public JC2Command (JC2 console, String cmdValue) {
+       if(cmdValue.isEmpty() || console == null){
            throw new IllegalArgumentException();
        }
        parameters = new ArrayList(Arrays.asList(cmdValue.split(" ")));
        name = parameters.get(0);
+       parentConsole = console;
+       
        
    }
    
-   public boolean execute() {
+   public void execute() {
     
-       return false;
    }
    
    public Exception getError(){
        return error;
    }
-           
+    public boolean hasError(){
+       return error == null;
+   }
+    
+    public void resetError(){
+        error = null;
+    }
+   
+    public JC2 getParentConsole() {
+        return parentConsole;
+    }
 }
 

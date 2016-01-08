@@ -13,15 +13,26 @@ import java.util.Arrays;
  * @author Phillip
  */
 public class JC2Command {
-   public static String name;
-   public static ArrayList parameters;
-   
+   public final String name;
+   private final  ArrayList<String> parameters;
+   public boolean hasError;
+   private Exception error;
    public JC2Command (String cmdValue) {
        if(cmdValue.isEmpty()){
            throw new IllegalArgumentException();
        }
        parameters = new ArrayList(Arrays.asList(cmdValue.split(" ")));
+       name = parameters.get(0);
        
+   }
+   
+   public boolean execute() {
+    
+       return false;
+   }
+   
+   public Exception getError(){
+       return error;
    }
            
 }

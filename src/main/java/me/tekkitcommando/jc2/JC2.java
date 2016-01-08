@@ -8,13 +8,10 @@ package me.tekkitcommando.jc2;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+import me.tekkitcommando.jc2.plugin.PluginLoader;
 import me.tekkitcommando.jc2.servers.ServerList;
-import me.tekkitcommando.jc2.view.ConsoleViewer;
-import me.tekkitcommando.jc2.view.TestHeadless;
 
 /**
- *
  * @author Phillip
  * @author Ethan
  */
@@ -30,7 +27,7 @@ public class JC2 {
     static IDManager idManager = new IDManager();
     static ServerList serverList = new ServerList();
     static List<JC2> appsList = new ArrayList();
-    List<ConsoleViewer> windowList = new ArrayList();
+    PluginLoader pluginLoader;
 
     public static void main(String[] args) {
 
@@ -48,14 +45,8 @@ public class JC2 {
 
         Scanner scanner = new Scanner(System.in);
         String currentCommand;
-
-        if (! TestHeadless.isReallyHeadless()){
-            ConsoleViewer consoleWindow = new ConsoleViewer();
-            consoleWindow.setVisible(true);
-            windowList.add(consoleWindow);
-        }
-        
-        
+        pluginLoader = new PluginLoader(this);
+    
         System.out.println("Info: Type /info to get the build version!");
         System.out.println("Info: Type /help to get a list of availble commands!");
 

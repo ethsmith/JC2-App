@@ -26,8 +26,7 @@ public class API {
             return x - y;
         } else if(multiplication == true) {
             return x * y;
-        }
-        return x + y;
+        }  return x + y;
     }
 
     /**

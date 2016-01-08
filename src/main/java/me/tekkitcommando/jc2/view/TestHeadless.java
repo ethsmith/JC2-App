@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.phillmac.jc2.view;
+package me.tekkitcommando.jc2.view;
 
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;

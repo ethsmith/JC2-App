@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Scanner;
 import me.tekkitcommando.jc2.plugin.PluginLoader;
 import me.tekkitcommando.jc2.servers.ServerList;
+import me.tekkitcommando.jc2.view.ConsoleViewer;
+import me.tekkitcommando.jc2.view.TestHeadless;
 
 /**
  * @author Phillip
@@ -28,6 +30,7 @@ public class JC2 {
     static ServerList serverList = new ServerList();
     static List<JC2> appsList = new ArrayList();
     PluginLoader pluginLoader;
+    List<ConsoleViewer> windowList = new ArrayList();
 
     public static void main(String[] args) {
 
@@ -45,6 +48,13 @@ public class JC2 {
 
         Scanner scanner = new Scanner(System.in);
         String currentCommand;
+        
+        if (! TestHeadless.isReallyHeadless()){
+            ConsoleViewer consoleWindow = new ConsoleViewer();
+            consoleWindow.setVisible(true);
+            windowList.add(consoleWindow);
+        }
+        
         pluginLoader = new PluginLoader(this);
     
         System.out.println("Info: Type /info to get the build version!");

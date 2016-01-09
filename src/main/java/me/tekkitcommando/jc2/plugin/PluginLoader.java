@@ -16,6 +16,8 @@ import me.tekkitcommando.jc2.JC2;
 public class PluginLoader extends ClassLoader {
 
     public static File pluginDir = new File("plugins");  // Defining Directory/Folder Name
+    public static ClassLoader l = null;
+    public static Class c = null;
 
     public static void loadPlugins() {
 
@@ -25,7 +27,7 @@ public class PluginLoader extends ClassLoader {
 
         File[] listOfFiles = pluginDir.listFiles(pluginFilter);
         for (File pluginFile : listOfFiles) {
-            List<String> classNames = new ArrayList<String>();
+            List<String> classNames = new ArrayList<>();
             ZipInputStream zip = null;
             try {
                 zip = new ZipInputStream(new FileInputStream("/" + pluginDir + "/" + pluginFile));
@@ -40,6 +42,16 @@ public class PluginLoader extends ClassLoader {
                     }
                 }
             } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println("Loading plugin classes... Please wait...");
+            System.out.println("NOTE: This may take some time if you have many plugins!")
+            l = ClassLoader.getSystemClassLoader();
+
+            try {
+                c = 1.loadClass(classNames);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

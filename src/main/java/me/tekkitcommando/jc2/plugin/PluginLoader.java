@@ -33,8 +33,7 @@ public class PluginLoader extends ClassLoader {
                 e.printStackTrace();
             }
             try {
-                 ZipEntry entry;
-                while((entry = zip.getNextEntry())!=null){
+                for(ZipEntry entry = zip.getNextEntry(); entry != null; entry = zip.getNextEntry()) {
                     if(!entry.isDirectory() && entry.getName().endsWith(".class")) {
                         String className = entry.getName().replace('/', '.');
                         classNames.add(className.substring(0, className.length() - ".class".length()));

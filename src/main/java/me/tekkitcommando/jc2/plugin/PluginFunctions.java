@@ -11,8 +11,6 @@ public interface PluginFunctions {
 
     public ArrayList getCommandNames();
 
-    public void setParameter(int param);
-
     public int getResult();
 
     public boolean hasError();

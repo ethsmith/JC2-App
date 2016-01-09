@@ -26,14 +26,15 @@ public class API {
             return x - y;
         } else if(multiplication == true) {
             return x * y;
-        }  return x + y;
+        }
+        return Integer.parseInt(null);
     }
 
     /**
      * Need to get back to this.
-     * @param cmd must be equal to the command being executed.
      */
-    public static Scanner commandRegister(String cmd) {
-        return null;
+    public static String cmd() {
+        cmd().equalsIgnoreCase(null);
+        return "Fuck dis shit";
     }
 }

@@ -9,32 +9,26 @@ public class API {
 
     /**
      * More of a test api method.
-     * @param x is the first number
-     * @param y is the second number
-     * @param addition for adding the x and y value
-     * @param division for dividing the x and y value
-     * @param subtraction for subtraction the x and y value
+     *
+     * @param x              is the first number
+     * @param y              is the second number
+     * @param addition       for adding the x and y value
+     * @param division       for dividing the x and y value
+     * @param subtraction    for subtraction the x and y value
      * @param multiplication for multiplying the x and y value
      * @return returns the answer to the equation.
      */
     public static int math(int x, int y, boolean addition, boolean division, boolean subtraction, boolean multiplication) {
-        if(addition == true) {
+        if (addition == true) {
             return x + y;
-        } else if(division == true) {
+        } else if (division == true) {
             return x / y;
-        } else if(subtraction == true) {
+        } else if (subtraction == true) {
             return x - y;
-        } else if(multiplication == true) {
+        } else if (multiplication == true) {
             return x * y;
         }
         return Integer.parseInt(null);
     }
 
-    /**
-     * Need to get back to this.
-     */
-    public static String cmd() {
-        cmd().equalsIgnoreCase(null);
-        return "Fuck dis shit";
-    }
 }

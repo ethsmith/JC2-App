@@ -7,6 +7,7 @@ package me.tekkitcommando.jc2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import me.tekkitcommando.jc2.view.ConsoleView;
 
 /**
  *
@@ -14,17 +15,19 @@ import java.util.Arrays;
  */
 public class JC2Command {
    public final String name;
+   public final ArrayList<String> aliases;
    private final  ArrayList<String> parameters;
    private Exception error = null;
-   private final JC2 parentConsole;
-   public JC2Command (JC2 console, String cmdValue) {
+   private final ConsoleView parentConsole;
+   public JC2Command (ConsoleView console, String cmdValue) {
        if(cmdValue.isEmpty() || console == null){
            throw new IllegalArgumentException();
        }
+       
        parameters = new ArrayList(Arrays.asList(cmdValue.split(" ")));
        name = parameters.get(0);
        parentConsole = console;
-       
+       aliases = new ArrayList();
        
    }
    
@@ -43,8 +46,16 @@ public class JC2Command {
         error = null;
     }
    
-    public JC2 getParentConsole() {
+    public ConsoleView getParentConsole() {
         return parentConsole;
+    }
+    
+    public ArrayList<String> getAliases(){
+        return aliases;
+    }
+    
+    public ArrayList<String> getParameters(){
+        return parameters;
     }
 }
 

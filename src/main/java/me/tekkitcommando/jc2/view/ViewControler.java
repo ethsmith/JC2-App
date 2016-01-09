@@ -19,10 +19,12 @@ public class ViewControler {
     final public boolean isHeadless;
     final private Map<String, ConsoleWindowView> windows;
     final private Map<String, HeadlessView> headlessViews;
+    final private JC2 parentApp;
 
-    public ViewControler(JC2 parentApp) {
+    public ViewControler(JC2 parentJC2) {
         windows = new HashMap();
         headlessViews = new HashMap();
+        parentApp = parentJC2;
         if (!TestHeadless.isReallyHeadless()) {
             ConsoleWindowView consoleWindow = new ConsoleWindowView(this);
             consoleWindow.setVisible(true);
@@ -37,5 +39,8 @@ public class ViewControler {
     public ConsoleView getConsoleView(){
         
         return null;
+    }
+    public JC2 getParentApp(){
+        return parentApp;
     }
 }

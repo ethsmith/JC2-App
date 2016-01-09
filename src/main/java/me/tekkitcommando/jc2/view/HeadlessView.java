@@ -8,6 +8,7 @@ package me.tekkitcommando.jc2.view;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
+import me.tekkitcommando.jc2.JC2Command;
 
 /**
  *
@@ -32,5 +33,20 @@ public class HeadlessView implements ConsoleView {
             out.println(prompt);
         }
         return scanner.nextLine();
+    }
+
+    @Override
+    public void writeLine(String line) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ViewControler getParentViewControler() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setWaitforInput(JC2Command requestingCommand) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

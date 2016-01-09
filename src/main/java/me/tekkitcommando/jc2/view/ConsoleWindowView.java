@@ -5,6 +5,8 @@
  */
 package me.tekkitcommando.jc2.view;
 
+import me.tekkitcommando.jc2.JC2Command;
+
 /**
  *
  * @author Phillip
@@ -127,4 +129,19 @@ public class ConsoleWindowView extends javax.swing.JFrame implements ConsoleView
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void writeLine(String line) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ViewControler getParentViewControler() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setWaitforInput(JC2Command requestingCommand) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

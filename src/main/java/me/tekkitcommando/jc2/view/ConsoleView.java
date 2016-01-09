@@ -5,13 +5,17 @@
  */
 package me.tekkitcommando.jc2.view;
 
+import me.tekkitcommando.jc2.JC2Command;
+
 /**
  *
  * @author Phillip
  */
 public interface ConsoleView {
-    
+   ViewControler parentViewControler = null;
     public void writeLine(String line);
+    public ViewControler getParentViewControler();
+    public void setWaitforInput(JC2Command requestingCommand);
         
     
 }
